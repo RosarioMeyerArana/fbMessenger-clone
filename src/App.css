@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.appChat{
+  height: 100vh !important
+}
+
 .appForm{
   padding: 20px;
   position: fixed;
@@ -9,7 +13,7 @@
   z-index: 2;
   background-color: white; 
   width: 100%;
-  margin: 20px;
+  margin: 0 20px;
 }
 
 .appFormControl{

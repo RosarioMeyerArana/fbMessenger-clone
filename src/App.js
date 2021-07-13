@@ -41,10 +41,18 @@ function App() {
 
   return (
     <div className="App">
+    <div classname='appChat'>
     <img className='img-logo' src='https://facebookbrand.com/wp-content/uploads/2020/10/Logo_Messenger_NewBlurple-399x399-1.png?w=80&h=80' alt='facebook messenger logo'/>
      <h1>Fb messenger clon</h1>
      <h2>Welcome {userName}</h2>
-
+      <FlipMove>
+        {
+          messages.map(({id, data}) => 
+          <Message key={id} username={userName} message={data}/>
+          )
+        }
+      </FlipMove>
+    </div>
     <form className='appForm'>
     <FormControl className='appFormControl'>
       <Input className='appInput' placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value) }  />
@@ -59,13 +67,6 @@ function App() {
       </IconButton>
     </FormControl>
     </form>
-    <FlipMove>
-      {
-        messages.map(({id, data}) => 
-        <Message key={id} username={userName} message={data}/>
-        )
-      }
-    </FlipMove>
     </div>
   );
 }

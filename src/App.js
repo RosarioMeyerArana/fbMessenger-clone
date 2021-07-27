@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState , useEffect, useRef} from 'react'
 import './App.css';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core'
 import Message from './Message'
@@ -13,13 +13,25 @@ function App() {
   const [messages, setMessages] = useState([])
   const [userName, setUserName] = useState('')
 
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(scrollToBottom, [messages]);
+
+
+
   useEffect(() => {
     db.collection('messages')
-    .orderBy('timestamp', 'desc')
+    .orderBy('timestamp', 'asc')
     .onSnapshot(snapshot => {
       setMessages(snapshot.docs.map(doc => ({id: doc.id , data: doc.data()})))
     })
+ 
   }, [] )
+
 
 
   useEffect(()=>{
@@ -42,16 +54,17 @@ function App() {
   return (
     <div className="App">
     <div classname='appChat'>
-    <img className='img-logo' src='https://facebookbrand.com/wp-content/uploads/2020/10/Logo_Messenger_NewBlurple-399x399-1.png?w=80&h=80' alt='facebook messenger logo'/>
-     <h1>Fb messenger clon</h1>
-     <h2>Welcome {userName}</h2>
-      <FlipMove>
-        {
-          messages.map(({id, data}) => 
-          <Message key={id} username={userName} message={data}/>
-          )
-        }
-      </FlipMove>
+        <img className='img-logo' src='https://facebookbrand.com/wp-content/uploads/2020/10/Logo_Messenger_NewBlurple-399x399-1.png?w=80&h=80' alt='facebook messenger logo'/>
+        <h1>Fb messenger clon</h1>
+        <h2>Welcome {userName}</h2>
+          <FlipMove delay={10} className='div'>
+            {
+              messages.map(({id, data}) => 
+              <Message key={id} username={userName} message={data}/>
+              )
+            }
+          </FlipMove>
+          <div ref={messagesEndRef} />
     </div>
     <form className='appForm'>
     <FormControl className='appFormControl'>

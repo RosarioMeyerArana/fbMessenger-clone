@@ -3,7 +3,7 @@
 }
 
 .appChat{
-  height: 100vh !important
+  height: 90vh !important;
 }
 
 .appForm{
@@ -32,4 +32,8 @@
 
 .img-logo{
   margin-top: 2rem
+}
+
+.div{
+  margin-bottom: 100px !important;
 }

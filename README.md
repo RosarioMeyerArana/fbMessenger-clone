@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Rosario Meyer Arana</h1>
 <h3 align="center">A passionate frontend developer from Argentina living in Spain</h3>
 
-![](https://firebasestorage.googleapis.com/v0/b/fbmessenger-5e5ce.appspot.com/o/gif-fbmess.gif?alt=media&token=4dbbf974-32be-437d-a76f-d59f2bd02358)
+![](https://firebasestorage.googleapis.com/v0/b/fbmessenger-5e5ce.appspot.com/o/ezgif.com-gif-maker.gif?alt=media&token=4cd7c55f-ac85-4831-bbaa-e2fcdbcbdd6b)
 
 
 - 👨‍💻 All of my projects are available at [https://github.com/RosarioMeyerArana](https://github.com/RosarioMeyerArana)
